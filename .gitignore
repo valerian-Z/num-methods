@@ -1,0 +1,26 @@
+# 环境与缓存
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 产物：图片保留 PDF，过程数据不提交
+results/*.png
+results/*.npz
+*.h5
+*.nc
+
+# 实验数据（体积大，按需手动添加）
+data/raw/
