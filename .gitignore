@@ -19,6 +19,7 @@ Thumbs.db
 # 产物：图片保留 PDF，过程数据不提交
 results/*.png
 results/*.npz
+results/figures/env_check.pdf
 *.h5
 *.nc
 

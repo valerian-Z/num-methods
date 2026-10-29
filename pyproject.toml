@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "ipykernel"]
 
 [tool.setuptools.packages.find]
 include = ["numerics*"]
