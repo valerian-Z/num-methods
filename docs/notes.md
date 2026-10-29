@@ -43,3 +43,23 @@
 ---
 
 ## 2026-XX-XX （下一条从这里开始）
+### 2026-10-29 pytest 一直只有 2 passed
+- 现象：新建了 test_integrate.py，pytest 仍显示 2 passed
+- 根本原因：文件建在 numerics/tests/ 而不是项目根的 tests/，
+  pyproject 里 testpaths=["tests"] 只扫根目录的那个
+- 怎么快速发现：看编辑器面包屑的路径
+- 预防：包目录（numerics/）只放源码，测试一律放根 tests/
+
+### 2026-10-29 ruff 报 F811 重复定义
+- 现象：integrate.py 里 trapezoid/simpson 被"重定义"
+- 原因：测试代码被误粘到 integrate.py 末尾
+- 教训：终端命令、Python 源码、测试代码，三者不能混
+
+### 2026-10-29 收敛阶的符号
+- 现象：拟合出 +2.000，以为应该是 −2，怀疑算错
+- 原因：err = C·h^p，ln(err) = p·ln(h) + ln(C)，斜率就是 +p
+- 教材写 −2 是把 h 从大到小排（或横轴用 1/h）
+- 结论：只看 |斜率| = 阶数
+git add .
+git commit -m "feat(integrate): add simpson with convergence tests and figure"
+git push
